@@ -1,0 +1,25 @@
+nb-icon {
+  cursor: pointer;
+}
+.user-item {
+  cursor: pointer;
+}
+
+.del-icon:hover {
+  color: #000;
+}
+
+.edit-icon:hover {
+  color: green;
+}
+
+table {
+  color: green;
+}
+.pagination ::ng-deep .ngx-pagination .current {
+  background: red;
+}
+
+nb-card {
+  overflow-x: auto;
+}

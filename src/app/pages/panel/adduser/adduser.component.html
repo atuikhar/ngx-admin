@@ -1,0 +1,106 @@
+<nb-card class="p-4">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        nbInput
+        formControlName="name"
+        id="name"
+        type="text"
+        class="form-control"
+      />
+      <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+        <div *ngIf="name.errors?.['required']">Name is Required</div>
+        <div *ngIf="name.errors?.['minlength']">
+          Name must be at least
+          {{ name.errors.minlength.requiredLength }} characters.
+        </div>
+        <div *ngIf="name.errors?.cannotContainSpace">
+          Username Cannot Contain Space
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        nbInput
+        formControlName="email"
+        id="email"
+        type="text"
+        class="form-control"
+      />
+      <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
+        <div *ngIf="email.errors?.['required']">Email is Required</div>
+        <div *ngIf="email.errors?.['email']">Invalid Email</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="dob">D.O.B</label>
+      <input
+        nbInput
+        type="date"
+        formControlName="dob"
+        class="form-control"
+        placeholder="Pick Date , Time andy Year"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="
+          form.get('dob').touched && form.get('dob').getError('Young') as error
+        "
+      >
+        Sorry, You Should be over: {{ error.maxAge }}+ Years of Age
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="
+          form.get('dob').touched && form.get('dob').getError('Future') as error
+        "
+      >
+        Sorry, You Cannot be from the future
+      </div>
+      <div *ngIf="dob.touched && dob.invalid" class="alert alert-danger">
+        <div *ngIf="dob.errors?.['required']">Required !!</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="img">Profile Picture</label>
+      <input
+        nbInput
+        class="form-control"
+        type="text"
+        placeholder="paste image url..."
+        formControlName="img"
+      />
+      <div *ngIf="img.touched && img.invalid" class="alert alert-danger">
+        <div *ngIf="img.errors?.['required']">Please paste an Image url !!</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="status" class="mx-2">Marital Status </label>
+      <nb-select
+        size="small"
+        placeholder="Select Status"
+        class="from-control"
+        formControlName="status"
+      >
+        <nb-option value="Single">Single</nb-option>
+        <nb-option value="Married">Married</nb-option>
+      </nb-select>
+      <div *ngIf="status.touched && status.invalid" class="alert alert-danger">
+        <div *ngIf="status.errors?.['required']">Please Select Status !!</div>
+      </div>
+    </div>
+    <div class="mt-3 form-group">
+      <label for="interest">Interest</label>
+      <div class="mt-3" formGroupName="options">
+        <nb-checkbox formControlName="painting">Painting</nb-checkbox>
+        <nb-checkbox formControlName="games">Games</nb-checkbox>
+        <nb-checkbox formControlName="music">Music</nb-checkbox>
+      </div>
+    </div>
+    <button class="mt-4 btn btn-primary" type="submit" [disabled]="!form.valid">
+      Add
+    </button>
+  </form>
+</nb-card>

@@ -1,0 +1,21 @@
+<h6 class="text-center">User Details</h6>
+
+<nb-card *ngIf="user" status="danger">
+  <nb-card-header>
+    <nb-user
+      size="large"
+      shape="semi-round"
+      name="{{ user.name }}"
+      title="{{ user.email }}"
+      picture="{{ user.img }}"
+    >
+    </nb-user>
+  </nb-card-header>
+  <nb-card-body>
+    <p>Name: {{ user.name }}</p>
+    <p>Marital Status : {{ user.status }}</p>
+    <p>Year of Birth : {{ user.dob | date: "yyyy" }}</p>
+    <p>Hobbies : {{ user.interest }}</p>
+  </nb-card-body>
+  <nb-card-footer>@RMgX</nb-card-footer>
+</nb-card>

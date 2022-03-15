@@ -1,0 +1,42 @@
+<div class="row show-grid">
+  <div class="col-sm-12 col-md-9">
+    <div>
+      <ngx-user
+        (onClickUser)="showUser($event)"
+        (onEditUser)="editUser($event)"
+        (addtoBinUser)="toBin($event)"
+        [users]="users"
+      ></ngx-user>
+    </div>
+    <div class="d-flex justify-content-between">
+      <button
+        [ngStyle]="{
+          'background-color': showAddUserForm ? '#7c69ef' : '#16c444'
+        }"
+        (click)="toggleForm()"
+        class="btn btn-sm"
+      >
+        <p class="m-0" *ngIf="!showAddUserForm">AddUser</p>
+        <p class="m-0" *ngIf="showAddUserForm">Close</p>
+      </button>
+      <!-- <button class="btn btn-primary btn-sm" routerLink="bin">
+        <nb-icon class="del-icon mx-2" icon="trash-2-outline"></nb-icon>
+      </button> -->
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-3">
+    <ngx-adduser
+      (submittedUser)="addNewUser($event)"
+      (updatedUser)="updateData($event)"
+      [editUserData]="editUserData"
+      *ngIf="showAddUserForm"
+    ></ngx-adduser>
+    <ngx-user-details [user]="user" *ngIf="!showAddUserForm"></ngx-user-details>
+  </div>
+</div>
+<div class="container">
+  <ngx-bin
+    [binData]="binData"
+    (restoreDataEmit)="restoreData($event)"
+  ></ngx-bin>
+</div>

@@ -1,0 +1,76 @@
+<nb-card class="p-2">
+  <div class="container d-flex justify-content-around">
+    <div class="mb-2">
+      <label>By : </label>
+      <input
+        nbInput
+        fieldSize="small"
+        type="text"
+        placeholder="name or email..."
+        [(ngModel)]="name"
+      />
+    </div>
+
+    <div class="mb-2">
+      <label>By : </label>
+      <input
+        nbInput
+        type="text"
+        fieldSize="small"
+        placeholder="Year, interest , status..."
+        [(ngModel)]="others"
+      />
+    </div>
+  </div>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">DOB</th>
+        <th scope="col">Status</th>
+        <th scope="col">Interest</th>
+
+        <th scope="col" class="text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody
+      *ngFor="
+        let user of users
+          | filter: name
+          | filter: others
+          | paginate: { itemsPerPage: 4, currentPage: p }
+      "
+    >
+      <tr class="user-item">
+        <td (click)="showUserDetails(user)">{{ user.name }}</td>
+        <td (click)="showUserDetails(user)">{{ user.email }}</td>
+        <td (click)="showUserDetails(user)">{{ user.dob | date: "yyyy" }}</td>
+        <td (click)="showUserDetails(user)">{{ user.status }}</td>
+        <td (click)="showUserDetails(user)">{{ user.interest }}</td>
+
+        <td class="d-flex justify-content-around">
+          <div>
+            <nb-icon
+              (click)="addToBin(user)"
+              status="danger"
+              class="del-icon mx-2"
+              icon="trash-2-outline"
+            ></nb-icon>
+          </div>
+          <div>
+            <nb-icon
+              (click)="onEdit(user)"
+              status="danger"
+              class="edit-icon mx-2"
+              icon="edit-2-outline"
+            ></nb-icon>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="container text-center">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</nb-card>

@@ -1,0 +1,28 @@
+<nb-card class="p-2">
+  <div class="container d-flex">
+    <div>
+      <input nbInput type="text" placeholder="search..." [(ngModel)]="byName" />
+      <ul *ngFor="let user of users | filter: byName">
+        <li>{{ user.name }}</li>
+      </ul>
+    </div>
+    <div>
+      <input nbInput type="text" placeholder="search..." [(ngModel)]="email" />
+      <ul *ngFor="let user of users | filter: email">
+        <li>{{ user.email }}</li>
+      </ul>
+    </div>
+    <div>
+      <input nbInput type="text" placeholder="search..." [(ngModel)]="dob" />
+      <ul *ngFor="let user of users | filter: dob">
+        <li>{{ user.dob | date: "yyyy" }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container text-center">
+    <pagination-controls
+      class="pagination"
+      (pageChange)="p = $event"
+    ></pagination-controls>
+  </div>
+</nb-card>

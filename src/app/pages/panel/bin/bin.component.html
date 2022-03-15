@@ -1,0 +1,50 @@
+<div class="lists row mt-5">
+  <div class="col-md-12 col-lg-3 col-xxxl-4"></div>
+  <div class="col-md-12 col-lg-6 col-xxxl-6">
+    <nb-card class="list-card" status="danger">
+      <nb-card-header>
+        <div class="d-flex justify-content-between">
+          <div>
+            <h6>RecycleBin</h6>
+          </div>
+          <!-- <div>
+            <button (click)="goBack()" class="btn btn-primary">
+              <nb-icon icon="arrow-circle-left-outline"></nb-icon>
+            </button>
+          </div> -->
+        </div>
+      </nb-card-header>
+
+      <nb-card-body>
+        <div *ngIf="!data?.length" class="container alert alert-danger">
+          <h6 class="text-center">Empty</h6>
+        </div>
+        <nb-list>
+          <nb-list-item
+            class="d-flex justify-content-between"
+            *ngFor="let d of data"
+          >
+            <div>
+              <p>
+                {{ d.name }}
+              </p>
+            </div>
+            <div>
+              <nb-icon
+                (click)="restoreUserData(d)"
+                class="undo mx-5"
+                icon="undo-outline"
+              ></nb-icon>
+              <nb-icon
+                (click)="deleteUserForever(d)"
+                class="del mx-2"
+                icon="trash-outline"
+              ></nb-icon>
+            </div>
+          </nb-list-item>
+        </nb-list>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-md-12 col-lg-3 col-xxxl-4"></div>
+</div>

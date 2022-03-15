@@ -1,0 +1,83 @@
+{
+  "users": [
+    {
+      "id": "443367d9-c11e-452c-8243-939cb5367aa9",
+      "name": "Coffee",
+      "dob": "2001-02-13",
+      "email": "coffee@gmail.com",
+      "img": "https://images.unsplash.com/photo-1647137733747-065c68ed058f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "status": "Single",
+      "interest": [
+        "music"
+      ]
+    },
+    {
+      "id": "f445429f-59d1-445b-be8a-2274bda802e3",
+      "name": "Angular",
+      "dob": "2022-03-03",
+      "email": "a@gmail.com",
+      "img": "https://images.unsplash.com/photo-1578824593391-4f226d804c76?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80",
+      "status": "Married",
+      "interest": [
+        "music"
+      ]
+    },
+    {
+      "id": "442067d9-c11e-452c-8243-939cb5367aa9",
+      "name": "Java",
+      "dob": "2001-02-13",
+      "email": "j@gmail.com",
+      "img": "https://images.unsplash.com/photo-1647137733747-065c68ed058f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "status": "Single",
+      "interest": [
+        "music"
+      ]
+    },
+    {
+      "id": "bd73f82a-974c-4fde-906c-9296fe2048b2",
+      "name": "Nebular",
+      "dob": "2022-03-01",
+      "email": "n@gmail.com",
+      "img": "https://images.unsplash.com/photo-1578824593391-4f226d804c76?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80",
+      "status": "Married",
+      "interest": [
+        "games"
+      ]
+    },
+    {
+      "id": "67eb0f0a-9651-4ce2-b702-54ba60cb50e5",
+      "name": "ngx-admin",
+      "dob": "2022-03-17",
+      "email": "ngx@gmail.com",
+      "img": "https://images.unsplash.com/photo-1578170952200-13b710d66df8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80",
+      "status": "Single",
+      "interest": [
+        "games",
+        "music"
+      ]
+    },
+    {
+      "id": "612067d9-c11e-452c-8243-939cb5367aa9",
+      "name": "NgRx",
+      "dob": "2001-02-13",
+      "email": "ngrx@gmail.com",
+      "img": "https://images.unsplash.com/photo-1647137733747-065c68ed058f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "status": "Single",
+      "interest": [
+        "music"
+      ]
+    },
+    {
+      "id": "e2af47d1-2cc6-40fd-925f-fbea57c39ed1",
+      "name": "Material",
+      "dob": "2000-02-01",
+      "email": "ma@gmail.com",
+      "img": "https://images.unsplash.com/photo-1647183994287-69a0e67bf315?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80",
+      "status": "Single",
+      "interest": [
+        "painting"
+      ]
+    }
+  ],
+  "bin": []
+}
