@@ -1,10 +1,17 @@
-<nb-card class="p-2">
+<nb-card>
+  <div *ngIf="!users?.length" class="container m-0 p-4 alert alert-danger">
+    <h6 class="text-center">Empty User/</h6>
+    <h6 class="text-center">Please Add Users</h6>
+  </div>
+</nb-card>
+<nb-card *ngIf="users.length" class="p-2">
   <div class="container d-flex justify-content-around">
     <div class="mb-2">
       <label>By : </label>
       <input
         nbInput
         fieldSize="small"
+        shape="round"
         type="text"
         placeholder="name or email..."
         [(ngModel)]="name"
@@ -15,9 +22,10 @@
       <label>By : </label>
       <input
         nbInput
+        shape="round"
         type="text"
         fieldSize="small"
-        placeholder="Year, interest , status..."
+        placeholder="year, interest , status..."
         [(ngModel)]="others"
       />
     </div>

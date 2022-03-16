@@ -7,7 +7,6 @@ import { Subscription } from "rxjs";
 @Component({
   selector: "ngx-dash",
   templateUrl: "./dash.component.html",
-  styleUrls: ["./dash.component.scss"],
 })
 export class DashComponent implements OnInit {
   subscription: Subscription;
@@ -26,6 +25,8 @@ export class DashComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.getUsers().subscribe((users) => (this.users = users));
+    //Get Data from localStorage OnInit
+    // this.users = JSON.parse(localStorage.getItem("datas"));
   }
   toggleForm() {
     this.uiService.toggleAddNewUserForm();
@@ -64,7 +65,7 @@ export class DashComponent implements OnInit {
       //     this.users.splice(index, 1);
       //   }
       // });
-      this.users.unshift(user);
+      this.users.push(user);
       this.ngOnInit();
     });
   }

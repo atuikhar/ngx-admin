@@ -4,6 +4,9 @@ nb-icon {
 .user-item {
   cursor: pointer;
 }
+.user-item:hover {
+  color: red;
+}
 
 .del-icon:hover {
   color: #000;
@@ -15,11 +18,13 @@ nb-icon {
 
 table {
   color: green;
-}
-.pagination ::ng-deep .ngx-pagination .current {
-  background: red;
+  font-weight: bold;
 }
 
 nb-card {
   overflow-x: auto;
+}
+
+label {
+  font-weight: bold;
 }

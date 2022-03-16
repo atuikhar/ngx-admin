@@ -99,8 +99,21 @@
         <nb-checkbox formControlName="music">Music</nb-checkbox>
       </div>
     </div>
-    <button class="mt-4 btn btn-primary" type="submit" [disabled]="!form.valid">
+    <button
+      *ngIf="!this.editing"
+      class="font-weight-bold mt-4 btn btn-primary"
+      type="submit"
+      [disabled]="!form.valid"
+    >
       Add
+    </button>
+    <button
+      *ngIf="this.editing"
+      class="font-weight-bold mt-4 btn btn-primary"
+      type="submit"
+      [disabled]="!form.valid"
+    >
+      Update
     </button>
   </form>
 </nb-card>

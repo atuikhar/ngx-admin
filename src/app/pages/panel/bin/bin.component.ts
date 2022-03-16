@@ -19,7 +19,7 @@ export class BinComponent implements OnInit {
   @Output() restoreDataEmit = new EventEmitter();
   @Input() binData: User;
 
-  data;
+  data: User[];
 
   constructor(private userService: UserService, private location: Location) {}
   ngOnInit(): void {
@@ -27,7 +27,7 @@ export class BinComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.data.unshift(this.binData);
+    this.data?.unshift(this.binData);
     this.ngOnInit();
   }
   goBack() {

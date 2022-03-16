@@ -48,6 +48,7 @@ export class AdduserComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    this.editing = false;
     this.form = new FormGroup({
       name: new FormControl("", [
         Validators.required,
@@ -75,31 +76,31 @@ export class AdduserComponent implements OnInit {
   }
   ngOnChanges(changes: SimpleChanges) {
     this.form = new FormGroup({
-      name: new FormControl(`${this.editUserData.name}`, [
+      name: new FormControl(`${this.editUserData?.name}`, [
         Validators.required,
         Validators.minLength(4),
         NameValidators.cannotContainSpace,
       ]),
-      email: new FormControl(`${this.editUserData.email}`, [
+      email: new FormControl(`${this.editUserData?.email}`, [
         Validators.required,
         Validators.email,
         NameValidators.cannotContainSpace,
       ]),
-      dob: new FormControl(`${this.editUserData.dob}`, Validators.required),
-      img: new FormControl(`${this.editUserData.img}`, Validators.required),
+      dob: new FormControl(`${this.editUserData?.dob}`, Validators.required),
+      img: new FormControl(`${this.editUserData?.img}`, Validators.required),
       status: new FormControl(
-        `${this.editUserData.status}`,
+        `${this.editUserData?.status}`,
         Validators.required
       ),
       options: new FormGroup({
         painting: new FormControl(
-          this.editUserData.interest.includes("painting") === true
+          this.editUserData?.interest.includes("painting") === true
         ),
         games: new FormControl(
-          this.editUserData.interest.includes("games") === true
+          this.editUserData?.interest.includes("games") === true
         ),
         music: new FormControl(
-          this.editUserData.interest.includes("music") === true
+          this.editUserData?.interest.includes("music") === true
         ),
       }),
     });

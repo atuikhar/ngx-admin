@@ -17,9 +17,21 @@ export class UserService {
   private apiBinUrl = "http://localhost:5000/bin";
 
   users: User[];
-  data;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    // const jsonData = [
+    //   {
+    //     id: "f445429f-59d1-445b-be8a-2274bda802e3",
+    //     name: "Angular",
+    //     dob: "2022-03-03",
+    //     email: "a@gmail.com",
+    //     img: "https://images.unsplash.com/photo-1578824593391-4f226d804c76?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80",
+    //     status: "Married",
+    //     interest: ["music"],
+    //   },
+    // ];
+    // localStorage.setItem("datas", JSON.stringify(jsonData));
+  }
 
   // CRUD http requests
 

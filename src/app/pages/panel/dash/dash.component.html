@@ -16,12 +16,18 @@
         (click)="toggleForm()"
         class="btn btn-sm"
       >
-        <p class="m-0" *ngIf="!showAddUserForm">AddUser</p>
-        <p class="m-0" *ngIf="showAddUserForm">Close</p>
+        <p class="font-weight-bold m-0" *ngIf="!showAddUserForm">AddUser</p>
+        <p class="font-weight-bold m-0" *ngIf="showAddUserForm">Close</p>
       </button>
       <!-- <button class="btn btn-primary btn-sm" routerLink="bin">
         <nb-icon class="del-icon mx-2" icon="trash-2-outline"></nb-icon>
       </button> -->
+    </div>
+    <div class="container">
+      <ngx-bin
+        [binData]="binData"
+        (restoreDataEmit)="restoreData($event)"
+      ></ngx-bin>
     </div>
   </div>
   <div class="col-sm-12 col-md-3">
@@ -33,10 +39,4 @@
     ></ngx-adduser>
     <ngx-user-details [user]="user" *ngIf="!showAddUserForm"></ngx-user-details>
   </div>
-</div>
-<div class="container">
-  <ngx-bin
-    [binData]="binData"
-    (restoreDataEmit)="restoreData($event)"
-  ></ngx-bin>
 </div>
